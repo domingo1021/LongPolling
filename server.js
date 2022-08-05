@@ -1,7 +1,5 @@
 const express = require('express');
 const events = require('events');
-const { resolve } = require('path');
-const { rejects } = require('assert');
 const eventEmitter = new events.EventEmitter();
 const app = express();
 
