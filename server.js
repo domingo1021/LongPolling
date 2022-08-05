@@ -29,6 +29,9 @@ app.get("/data", async (req, res)=>{
 
 app.post("/data", (req, res)=>{
     let {data} = req.body;
+    if(fakeData === null){
+        fakeData = [];
+    }
     fakeData.push(data)
     const inboundIP = req.header('x-forwarded-for') || req.socket.remoteAddress;
     eventEmitter.emit("Data change")
