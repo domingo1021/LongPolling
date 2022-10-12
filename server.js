@@ -38,7 +38,6 @@ app.post("/data", (req, res)=>{
     return res.send(`${inboundIP} says ${data}`);
 })
 
-// 發現奇特的點： RESTful 設計下的 delete 會等到 get 結束才會執行
 app.delete("/Deletedata", (req, res)=>{
     fakeData = [];
     eventEmitter.emit("Data change")
